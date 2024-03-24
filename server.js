@@ -2,6 +2,7 @@ require('dotenv').config()
 
 const express = require('express')
 const supabase = require('./config/supabaseClient')
+const assessmentRoutes = require('./routes/assessments')
 
 //express app
 const app = express()
@@ -10,6 +11,7 @@ const app = express()
 
 
 //routes
+app.use('/api/assessment', assessmentRoutes)
 app.get('/', (req, res) => {
     res.json({mssg: 'welcome'})
 })
