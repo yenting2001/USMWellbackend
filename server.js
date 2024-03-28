@@ -8,13 +8,10 @@ const assessmentRoutes = require('./routes/assessments')
 const app = express()
 
 //middleware
-
+app.use(express.json());
 
 //routes
 app.use('/api/assessment', assessmentRoutes)
-app.get('/', (req, res) => {
-    res.json({mssg: 'welcome'})
-})
 
 //connect to database
 supabase
